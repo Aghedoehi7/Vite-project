@@ -1,18 +1,15 @@
 /* ===== SERVICES GALLERY ===== */
 .services-gallery {
   display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping to new line */
-  justify-content: space-between; /* Space items evenly */
-  align-items: stretch; /* Make all cards same height */
-  gap: 1.5rem; /* Space between cards */
-  padding: 6rem 5%;
+  flex-wrap: wrap; /* Allow wrapping to new line on mobile */
+  justify-content: center; /* Center cards */
+  align-items: stretch;
+  gap: 1.5rem;
+  padding: 4rem 1rem; /* Reduced padding on mobile */
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
-  overflow-x: auto; /* Allow horizontal scrolling on small screens */
-  scrollbar-width: none; /* Hide scrollbar for cleaner look */
-  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
   background-color: #0A0E19;
   color: #ffffff;
 }
@@ -31,11 +28,11 @@
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
-  flex: 0 0 calc(33.333% - 1rem); /* Three cards per row with gap */
-  min-width: 300px; /* Slightly wider minimum width */
+  width: 100%; /* Full width on mobile */
+  max-width: 350px; /* Max width for larger screens */
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-sizing: border-box;
-  margin: 0; /* Remove margin since we're using gap */
+  margin: 0 auto; /* Center the card */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -161,20 +158,16 @@
 
 @media (max-width: 767px) {
   .services-gallery {
-    padding: 2rem 1.5rem;
-    justify-content: flex-start; /* Align cards to start on mobile */
-    scroll-snap-type: x mandatory; /* Enable snap scrolling on mobile */
+    padding: 2rem 1rem;
+    flex-direction: column; /* Stack cards vertically on mobile */
+    align-items: center; /* Center cards */
+    gap: 1.5rem;
   }
   
   .service-card {
-    flex: 0 0 85%; /* Make cards take most of the viewport width */
-    scroll-snap-align: start; /* Snap cards to start when scrolling */
-    margin-right: 1rem; /* Add some space between cards */
-  }
-  
-  /* Add some padding to the last card for better scrolling experience */
-  .service-card:last-child {
-    padding-right: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
   
   .service-card__title {
@@ -183,6 +176,11 @@
   
   .service-card__description {
     font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .service-card__image-container {
+    height: 200px; /* Slightly smaller image on mobile */
   }
 }
 

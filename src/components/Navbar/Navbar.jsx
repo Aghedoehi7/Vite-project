@@ -23,14 +23,18 @@ const Navbar = () => {
     setMobileMenu(!mobileMenu);
   };
 
-  const handleNavClick = (to) => {
+  const handleNavClick = (to, isPage = false) => {
     // Close mobile menu when a link is clicked
     setMobileMenu(false);
     
-    // If not on home page, navigate to home first, then scroll
-    if (!isHomePage && to !== '/') {
+    if (isPage) {
+      // If it's a page (like /services, /quality-assurance, /contact), navigate directly
+      navigate(`/${to}`);
+    } else if (!isHomePage && to !== '/') {
+      // If not on home page and it's a section, navigate to home first, then scroll
       navigate('/', { state: { scrollTo: to } });
     }
+    // If on home page and it's a section, the ScrollLink will handle the scrolling
   };
   return (
     <nav className={`navbar ${sticky ? 'navbar--dark' : ''}`}>
@@ -161,45 +165,78 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <ul className={`navbar__mobile-menu ${mobileMenu ? 'navbar__mobile-menu--open' : ''}`}>
         <li className='navbar__mobile-item'>
-          <RouterLink 
-            to='/' 
-            onClick={() => handleNavClick('home')}
-            className='navbar__mobile-link'
-          >
-            Home
-          </RouterLink>
+          {isHomePage ? (
+            <ScrollLink 
+              to='home' 
+              smooth={true} 
+              offset={-100} 
+              duration={500}
+              onClick={() => {
+                handleNavClick('home');
+                setMobileMenu(false);
+              }}
+              className='navbar__mobile-link'
+            >
+              Home
+            </ScrollLink>
+          ) : (
+            <RouterLink 
+              to='/' 
+              onClick={() => handleNavClick('home')}
+              className='navbar__mobile-link'
+            >
+              Home
+            </RouterLink>
+          )}
         </li>
         <li className='navbar__mobile-item'>
-          <RouterLink 
-            to='/' 
-            onClick={() => handleNavClick('about')}
-            className='navbar__mobile-link'
-          >
-            About
-          </RouterLink>
+          {isHomePage ? (
+            <ScrollLink 
+              to='about' 
+              smooth={true} 
+              offset={-80} 
+              duration={500}
+              onClick={() => {
+                handleNavClick('about');
+                setMobileMenu(false);
+              }}
+              className='navbar__mobile-link'
+            >
+              About
+            </ScrollLink>
+          ) : (
+            <RouterLink 
+              to='/' 
+              onClick={() => handleNavClick('about')}
+              className='navbar__mobile-link'
+            >
+              About
+            </RouterLink>
+          )}
         </li>
         <li className='navbar__mobile-item'>
           <RouterLink 
             to='/services' 
-            onClick={() => handleNavClick('services')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('services', true);
+            }}
             className='navbar__mobile-link'
           >
             Services
           </RouterLink>
         </li>
-        <li className='navbar__mobile-item'>
+        <li className='navbar__mobile-item' onClick={() => setMobileMenu(false)}>
           <RouterLink 
-            to='/' 
-            onClick={() => handleNavClick('quality-assurance')}
+            to='/quality-assurance'
             className='navbar__mobile-link navbar__mobile-button'
           >
             Quality Assurance
           </RouterLink>
         </li>
-        <li className='navbar__mobile-item'>
+        <li className='navbar__mobile-item' onClick={() => setMobileMenu(false)}>
           <RouterLink 
-            to='/' 
-            onClick={() => handleNavClick('contact')}
+            to='/contact'
             className='navbar__mobile-link navbar__mobile-button'
           >
             Contact us
