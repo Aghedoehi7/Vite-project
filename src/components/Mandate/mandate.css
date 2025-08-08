@@ -1,0 +1,362 @@
+.mandate-container {
+  width: 100%;
+  background-color: #0A0E19;
+  padding: 40px 0;
+}
+
+.mandate-inner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mandate-image-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.mandate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.mandate-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.7));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.mandate-text-overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.mandate-text-overlay h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+/* .mandate-text .btn{
+  margin-top: 24px;
+  margin-bottom: 24px; */
+
+
+/* div .mandate-text .btn{
+  margin-top: 24px;
+  margin-bottom: 24px; */
+
+
+
+.mandate-btn-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.mandate-btn-container .btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mandate-btn-container .btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Content below image styles */
+.mandate-content-below {
+  text-align: center;
+  color: #333;
+}
+
+.mandate-content-below p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2563eb;
+}
+
+.mandate-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mandate-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding: 12px 20px;
+  background-color: #f8fafc;
+  border-left: 4px solid #2563eb;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mandate-list li:hover {
+  background-color: #e2e8f0;
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+/* Extra Large Screens */
+@media (min-width: 1440px) {
+  .mandate-container {
+    max-width: 1200px;
+  }
+  
+  .mandate-image-container {
+    height: 450px;
+  }
+  
+  .mandate-text-overlay {
+    padding: 40px;
+  }
+  
+  .mandate-text-overlay h1 {
+    font-size: 3rem;
+  }
+  
+  .mandate-text-overlay h3 {
+    font-size: 1.4rem;
+  }
+  
+  .mandate-content-below p {
+    font-size: 1.2rem;
+  }
+  
+  .mandate-list li {
+    font-size: 1.1rem;
+    padding: 15px 25px;
+  }
+  
+  .mandate-btn-container .btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .mandate-image-container {
+    height: 420px;
+  }
+  
+  .mandate-text-overlay {
+    padding: 36px;
+  }
+  
+  .mandate-text-overlay h1 {
+    font-size: 2.8rem;
+  }
+  
+  .mandate-text-overlay h3 {
+    font-size: 1.3rem;
+  }
+  
+  .mandate-list li {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
+/* Medium-Large Screens */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .mandate-image-container {
+    height: 380px;
+  }
+  
+  .mandate-text-overlay h1 {
+    font-size: 2.6rem;
+  }
+  
+  .mandate-text-overlay h3 {
+    font-size: 1.2rem;
+  }
+  
+  .mandate-list li {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+  }
+}
+
+/* Tablets and Small Laptops */
+@media (max-width: 800px) {
+  .mandate-container {
+    padding: 16px;
+  }
+  
+  .mandate-image-container {
+    height: 350px;
+    margin-bottom: 25px;
+  }
+  
+  .mandate-text-overlay {
+    padding: 28px;
+  }
+  
+  .mandate-text-overlay h1 {
+    font-size: 2.2rem;
+  }
+  
+  .mandate-text-overlay h3 {
+    font-size: 1.1rem;
+  }
+  
+  .mandate-content-below p {
+    font-size: 1rem;
+  }
+  
+  .mandate-list li {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mandate-container {
+    padding: 12px;
+  }
+  
+  .mandate-image-container {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .mandate-text-overlay {
+    padding: 24px;
+  }
+  
+  .mandate-text-overlay h1 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .mandate-text-overlay h3 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  
+  .mandate-content-below p {
+    font-size: 0.95rem;
+  }
+  
+  .mandate-list li {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    margin-bottom: 10px;
+  }
+  
+  .mandate-btn-container {
+    margin-top: 20px;
+  }
+  
+  .mandate-btn-container .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mandate-container {
+    padding: 10px;
+  }
+  
+  .mandate-image-container {
+    height: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .mandate-text-overlay {
+    padding: 16px;
+  }
+  
+  .mandate-text-overlay h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .mandate-text-overlay h3 {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .mandate-content-below p {
+    font-size: 0.9rem;
+  }
+  
+  .mandate-list li {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+  
+  .mandate-btn-container {
+    margin-top: 16px;
+  }
+  
+  .mandate-btn-container .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .mandate-image-container {
+    height: 220px;
+    margin: 0 8px;
+  }
+  
+  .mandate-text-overlay {
+    padding: 12px;
+  }
+  
+  .mandate-text-overlay h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .mandate-text-overlay h3 {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .mandate-btn-container .btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}

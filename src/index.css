@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "outfit", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0A0E19; /* Matching the footer background color */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  color: #fff; /* Default text color */
+}
+
+/* Ensure the app container takes at least the full viewport height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Main content area should grow to push footer down */
+.app-container > main {
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer should stay at the bottom */
+.app-container > footer {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
+  scroll-margin-top: 100px; /* Adjust based on your header height */
+}
+
+/* Smooth scrolling for elements with IDs */
+[id] {
+  scroll-margin-top: 120px; /* Slightly more for better spacing */
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+.container{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.btn{
+  background: white;
+  color: #212121;
+  padding: 14px 25px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: inline flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn img{
+  width: 20px;
+  margin-left: 10px;
+
+}.btn.dark-btn{
+  background: #212EA0;
+  color: white;
+}
+/* media quary */
+/* Smooth scroll behavior for mobile */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .container{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+.btn{
+  padding: 14px 22px;
+}
+}
