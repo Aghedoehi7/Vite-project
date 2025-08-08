@@ -139,6 +139,10 @@
     padding: 15px 0;
   }
   
+  .navbar__logo {
+    width: 120px; /* Reduced from 140px for medium screens */
+  }
+  
   .navbar__desktop-menu {
     display: none;
   }
@@ -161,5 +165,12 @@
   .navbar__mobile-button:hover {
     background-color: #1d4ed8;
     transform: none;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .navbar__logo {
+    width: 100px; /* Even smaller for very small screens */
   }
 }

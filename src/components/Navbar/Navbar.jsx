@@ -229,7 +229,7 @@ const Navbar = () => {
         <li className='navbar__mobile-item' onClick={() => setMobileMenu(false)}>
           <RouterLink 
             to='/quality-assurance'
-            className='navbar__mobile-link navbar__mobile-button'
+            className='navbar__mobile-link'
           >
             Quality Assurance
           </RouterLink>
@@ -237,7 +237,7 @@ const Navbar = () => {
         <li className='navbar__mobile-item' onClick={() => setMobileMenu(false)}>
           <RouterLink 
             to='/contact'
-            className='navbar__mobile-link navbar__mobile-button'
+            className='navbar__mobile-link'
           >
             Contact us
           </RouterLink>

@@ -33,7 +33,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: black;
+    color: white; /* Changed from black to white */
     cursor: pointer;
     opacity: 0;
     padding: 70%;
