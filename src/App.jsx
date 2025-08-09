@@ -8,11 +8,19 @@ import ServicesPage from './pages/ServicesPage';
 import QualityAssurancePage from './pages/QualityAssurancePage';
 import ContactPage from './pages/ContactPage';
 
-// Scroll to top on route change
+// Scroll to top on route change, but only for non-home routes
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const isInitialLoad = React.useRef(true);
 
   useEffect(() => {
+    // Don't scroll on initial load of home page
+    if (isInitialLoad.current && pathname === '/') {
+      isInitialLoad.current = false;
+      return;
+    }
+    
+    // For other routes or navigation, scroll to top
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
