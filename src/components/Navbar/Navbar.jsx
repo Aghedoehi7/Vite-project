@@ -13,15 +13,20 @@ const Navbar = () => {
     })
   },[]);
 
-  const[mobileMenu, setMobileMenu] =useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
   const toggleMenu = () => {
-    setMobileMenu(!mobileMenu);
+    setMobileMenu(prev => !prev);
   };
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenu(false);
+  }, [location]);
 
   const handleNavClick = (to, isPage = false) => {
     // Close mobile menu when a link is clicked

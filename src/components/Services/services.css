@@ -1,11 +1,11 @@
 /* ===== SERVICES GALLERY ===== */
 .services-gallery {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping to new line on mobile */
-  justify-content: center; /* Center cards */
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: stretch;
-  gap: 1.5rem;
-  padding: 4rem 1rem; /* Reduced padding on mobile */
+  gap: 2rem;
+  padding: 4rem 5%;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -139,16 +139,31 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1024px) {
   .services-gallery {
-    padding: 3rem 4%;
-    max-width: 800px;
-    justify-content: flex-start; /* Align cards to start on tablet */
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+    justify-content: center;
+    padding: 4rem 5%;
+    max-width: 1400px;
   }
   
   .service-card {
-    flex: 0 0 calc(50% - 0.75rem); /* Two cards per row on tablet */
-    min-width: 280px;
+    flex: 1;
+    min-width: 0; /* Allow cards to shrink below their max-width */
+    max-width: 380px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .services-gallery {
+    padding: 3rem 4%;
+    max-width: 1200px;
+    justify-content: center;
+  }
+  
+  .service-card {
+    flex: 0 0 calc(33.333% - 1.5rem); /* Three cards per row on larger tablets */
+    max-width: calc(33.333% - 1.5rem);
   }
   
   .service-card__content {
@@ -159,8 +174,8 @@
 @media (max-width: 767px) {
   .services-gallery {
     padding: 2rem 1rem;
-    flex-direction: column; /* Stack cards vertically on mobile */
-    align-items: center; /* Center cards */
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
   }
   
