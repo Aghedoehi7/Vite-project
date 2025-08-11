@@ -43,26 +43,13 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <ul className='navbar__list navbar__desktop-menu'>
         <li className='navbar__item'>
-          {isHomePage ? (
-            <ScrollLink 
-              to='home' 
-              smooth={true} 
-              offset={-100} 
-              duration={500} 
-              onClick={() => handleNavClick('home')}
-              className='navbar__link'
-            >
-              Home
-            </ScrollLink>
-          ) : (
-            <RouterLink 
-              to='/' 
-              onClick={() => handleNavClick('home')}
-              className='navbar__link'
-            >
-              Home
-            </RouterLink>
-          )}
+          <RouterLink 
+            to='/' 
+            className='navbar__link'
+            onClick={() => handleNavClick('home')}
+          >
+            Home
+          </RouterLink>
         </li>
         <li className='navbar__item'>
           {isHomePage ? (
