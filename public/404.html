@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <script>
-    // Get the current path and redirect to the index.html with the path as a hash
-    const path = window.location.pathname;
-    window.location.href = '/Vite-project/#' + path;
+  <title>Zhaikmunai Oil Company</title>
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    (function() {
+      // Get the path and redirect to the SPA with the path
+      var path = window.location.pathname;
+      var appPath = '/Vite-project';
+      
+      // Remove the app path if it's included in the URL
+      if (path.startsWith(appPath)) {
+        path = path.slice(appPath.length);
+      }
+      
+      // Redirect to index.html with the path as a query parameter
+      var newLocation = appPath + '/index.html';
+      if (path && path !== '/' && path !== '/index.html') {
+        newLocation += '?path=' + encodeURIComponent(path);
+      }
+      
+      window.location.href = newLocation;
+    })();
   </script>
 </head>
 <body>
-  <p>If you are not redirected automatically, <a href="/Vite-project/">click here</a>.</p>
+  <p>Redirecting to the application... <a href="/Vite-project/">Click here</a> if you are not redirected automatically.</p>
 </body>
 </html>
