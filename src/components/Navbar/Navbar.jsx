@@ -32,11 +32,18 @@ const Navbar = () => {
     // Close mobile menu when a link is clicked
     setMobileMenu(false);
     
-    if (isPage) {
+    if (to === 'home' || to === '/') {
+      // If it's the home link, just scroll to top
+      if (isHomePage) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate('/');
+      }
+    } else if (isPage) {
       // If it's a page (like /services, /quality-assurance, /contact), navigate directly
       navigate(`/${to}`);
-    } else if (!isHomePage && to !== '/') {
-      // If not on home page and it's a section, navigate to home first, then scroll
+    } else if (!isHomePage) {
+      // If not on home page and it's a section, navigate to home with scroll target
       navigate('/', { state: { scrollTo: to } });
     }
     // If on home page and it's a section, the ScrollLink will handle the scrolling
