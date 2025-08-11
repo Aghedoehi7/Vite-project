@@ -17,7 +17,8 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  // For HashRouter, we need to check both the pathname and hash
+  const isHomePage = location.pathname === '/' && !location.hash;
 
   const toggleMenu = () => {
     setMobileMenu(prev => !prev);
@@ -40,11 +41,11 @@ const Navbar = () => {
         navigate('/');
       }
     } else if (isPage) {
-      // If it's a page (like /services, /quality-assurance, /contact), navigate directly
-      navigate(`/${to}`);
+      // For HashRouter, we need to use the hash-based navigation
+      navigate(`#/${to}`, { replace: true });
     } else if (!isHomePage) {
-      // If not on home page and it's a section, navigate to home with scroll target
-      navigate('/', { state: { scrollTo: to } });
+      // If not on home page and it's a section, navigate to home with hash
+      navigate(`#/${to}`, { replace: true });
     }
     // If on home page and it's a section, the ScrollLink will handle the scrolling
   };

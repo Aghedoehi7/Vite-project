@@ -8,23 +8,29 @@ import ServicesPage from './pages/ServicesPage';
 import QualityAssurancePage from './pages/QualityAssurancePage';
 import ContactPage from './pages/ContactPage';
 
-// Scroll to top on route change, but only for non-home routes
+// Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   const isInitialLoad = React.useRef(true);
 
   useEffect(() => {
-    // Don't scroll on initial load of home page
-    if (isInitialLoad.current && pathname === '/') {
-      isInitialLoad.current = false;
-      return;
+    // Remove the # from the URL for cleaner URLs (HashRouter will still work with it)
+    if (window.location.hash.startsWith('#/')) {
+      const cleanPath = window.location.hash.substring(1);
+      if (window.history.replaceState) {
+        window.history.replaceState(null, null, cleanPath);
+      }
     }
-    
-    // For other routes or navigation, scroll to top
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+
+    // Scroll to top on route change, but skip initial load
+    if (!isInitialLoad.current) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    } else {
+      isInitialLoad.current = false;
+    }
   }, [pathname]);
 
   return null;
