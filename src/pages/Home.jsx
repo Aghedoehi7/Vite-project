@@ -4,7 +4,7 @@ import Refinery from '../components/Refinery/refinery';
 import Award from '../components/Award/award';
 import About from '../components/About/about';
 import Services from '../components/Services/Services';
-import Mandate from '../components/Mandate/Mandate';
+import Mandate from '../components/Mandate/mandate';
 import Contact from '../components/Contact/Contact';
 
 const Home = () => {
